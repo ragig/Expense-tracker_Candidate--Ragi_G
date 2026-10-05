@@ -34,10 +34,6 @@ Because this is a static web app, you do not need a backend server or package in
 
 If you are opening the files directly from the filesystem, some browsers may restrict some localStorage behavior depending on settings. For the most reliable experience, run a simple local web server instead:
 
-```bash
-cd "f:\Task_ExpenseTracker"
-python -m http.server 8000
-```
 
 Then visit:
 
