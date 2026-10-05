@@ -41,8 +41,10 @@ python -m http.server 8000
 
 Then visit:
 
-```text
-http://localhost:8000/Home.html
+```already registered some account Email id:girija@gmail.com
+password:123456R
+Another emailid:ragi@gmail.com,password:123456R
+
 ```
 
 ## Notes
