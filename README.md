@@ -35,7 +35,7 @@ Because this is a static web app, you do not need a backend server or package in
 If you are opening the files directly from the filesystem, some browsers may restrict some localStorage behavior depending on settings. For the most reliable experience, run a simple local web server instead:
 
 
-Then visit:
+Details
 
 ```already registered some account 
 Email id:girija@gmail.com
