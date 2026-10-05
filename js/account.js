@@ -1,9 +1,6 @@
-
 // ======================================
 // ACCOUNT MANAGEMENT
 // ======================================
-
-
 // Get account form
 
 const accountForm =
