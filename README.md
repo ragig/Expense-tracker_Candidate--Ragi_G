@@ -25,19 +25,18 @@ A lightweight personal expense tracking web app built with plain HTML, CSS, and 
 
 ## How to Run
 
-Because this is a static web app, you do not need a backend server or package install.
 
 1. Open the project folder in a browser.
 2. Start by opening `Home.html` or `login.html`.
 3. Register a new user or log in with an existing account.
 4. Use the dashboard and expense pages to manage your budget.
 
-If you are opening the files directly from the filesystem, some browsers may restrict some localStorage behavior depending on settings. For the most reliable experience, run a simple local web server instead:
+can open them directly by home.html page and open with live server
 
 
 Details
 
-```already registered some account 
+already registered some account And their login details 
 Email id:girija@gmail.com
 password:123456R
 Another emailid:ragi@gmail.com,password:123456R
