@@ -37,7 +37,8 @@ If you are opening the files directly from the filesystem, some browsers may res
 
 Then visit:
 
-```already registered some account Email id:girija@gmail.com
+```already registered some account 
+Email id:girija@gmail.com
 password:123456R
 Another emailid:ragi@gmail.com,password:123456R
 
