@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accounts - Expense Tracker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            height: 70px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white !important;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 30px;
+        }
+
+        .page-heading h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .page-heading p {
+            color: #777;
+        }
+
+        /* =========================
+           ADD ACCOUNT
+        ========================= */
+
+        .account-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 35px;
+        }
+
+        .account-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .add-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .add-btn:hover {
+            background-color: #555;
+        }
+
+        /* =========================
+           ACCOUNT LIST
+        ========================= */
+
+        .accounts-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .accounts-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .account-table th,
+        .account-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .account-table th {
+            background-color: #f8f8f8;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .no-accounts {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .nav-links a {
+                padding: 8px;
+                font-size: 13px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="account-page">
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Expense Tracker
+        </div>
+
+        <div class="nav-links">
+
+            <a href="Home.html">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="expense.html">
+                Expenses
+            </a>
+
+            <a href="categories.html">
+                Categories
+            </a>
+
+            <a href="account.html" class="account-current" aria-current="page">
+                Account
+            </a>
+
+            <a href="login.html"
+               class="logout-btn"
+               onclick="logout()">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="container">
+
+        <div class="page-heading">
+
+            <h1>
+                Accounts
+            </h1>
+
+            <p>
+                Add and manage your accounts for tracking expenses.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ADD ACCOUNT FORM
+        ========================= -->
+
+        <div class="account-form">
+
+            <h2>
+                Add Account
+            </h2>
+
+            <form id="accountForm" novalidate>
+
+                <div class="form-row">
+
+                    <!-- Account Name -->
+
+                    <div class="form-group">
+
+                        <label for="accountName">
+                            Account Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="accountName"
+                            placeholder="Example: Savings Account"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Account Type -->
+
+                    <div class="form-group">
+
+                        <label for="accountType">
+                            Account Type
+                        </label>
+
+                        <select id="accountType" required>
+
+                            <option value="">
+                                Select Account Type
+                            </option>
+
+                            <option value="Bank">
+                                Bank
+                            </option>
+
+                            <option value="Cash">
+                                Cash
+                            </option>
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="Credit Card">
+                                Credit Card
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Balance -->
+
+                    <div class="form-group">
+
+                        <label for="balance">
+                            Balance
+                        </label>
+
+                        <input
+                            type="number"
+                            id="balance"
+                            placeholder="Enter balance"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="add-btn">
+                    Add Account
+                </button>
+
+                <p class="form-message"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             ACCOUNT LIST
+        ========================= -->
+
+        <div class="accounts-section">
+
+            <h2>
+                My Accounts
+            </h2>
+
+            <table class="account-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Account Name
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Balance
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="accountList">
+
+                    <!-- Accounts will be displayed here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+
+    <!-- Account JavaScript -->
+
+    <script src="js/form-feedback.js"></script>
+    <script src="js/user-storage.js"></script>
+    <script src="js/account.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Transactions - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body class="expense-page">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+
+        <div class="logo">
+
+            Expense Tracker
+
+        </div>
+
+
+        <div class="nav-links">
+
+
+            <a href="Home.html">
+                Home
+            </a>
+
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+
+            <a href="expense.html">
+                Transactions
+            </a>
+
+
+            <a href="categories.html">
+                Categories
+            </a>
+
+
+            <a href="account.html">
+                Account
+            </a>
+
+
+            <a href="login.html"
+               class="logout-btn"
+               onclick="logout()">
+
+                Logout
+
+            </a>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <h1>
+                Transactions
+            </h1>
+
+            <p>
+                Add and manage your expenses.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             ADD EXPENSE
+        ========================= -->
+
+        <div class="expense-form">
+
+
+            <h2 id="expenseFormHeading">
+                Add Transaction
+            </h2>
+
+
+            <form id="expenseForm" novalidate>
+
+
+                <!-- ROW 1 -->
+
+                <div class="form-row">
+
+                    <!-- AMOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="amount">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Enter amount"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label for="expenseDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expenseDate"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ROW 2 -->
+
+                <div class="form-row">
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+
+                        <select
+                            id="category"
+                            required>
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ACCOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="account">
+                            Account
+                        </label>
+
+
+                        <select
+                            id="account"
+                            required>
+
+                            <option value="">
+                                Select Account
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="description"
+                        placeholder="Example: Lunch from restaurant"
+                        required></textarea>
+
+                </div>
+
+
+
+                <br>
+
+
+                <button
+                    type="submit"
+                    class="add-btn">
+
+                    Add Transaction
+
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="cancel-edit-btn"
+                    hidden>
+
+                    Cancel
+
+                </button>
+
+                <p class="form-message"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             EXPENSE LIST
+        ========================= -->
+
+        <div class="expenses-section">
+
+
+            <h2>
+                My Transactions
+            </h2>
+
+            <div class="form-row transaction-filters" aria-label="Transaction filters">
+                <div class="form-group">
+                    <label for="categoryFilter">Filter by category</label>
+                    <select id="categoryFilter">
+                        <option value="">All categories</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <table class="expense-table">
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Account
+                        </th>
+
+                        <th>
+                            Description
+                        </th>
+
+                        <th>
+                            Amount
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="expenseList">
+
+                    <!-- Expenses appear here -->
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="js/form-feedback.js"></script>
+    <script src="js/user-storage.js"></script>
+    <script src="js/transaction.js"></script>
+
+
+</body>
+
+</html>

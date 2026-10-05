@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="register-page">
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            Expense Tracker
+        </div>
+
+        <div class="nav-links">
+            <a href="Home.html" class="auth-home-link">Home</a>
+            <a href="login.html" class="login">Login</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Register Section -->
+    <section class="register-container">
+
+        <!-- Left Image -->
+        <div class="image-section">
+            <img src="photos/registerpage.jpg" alt="Expense Tracker">
+        </div>
+
+
+        <!-- Right Form -->
+        <div class="form-section">
+
+            <h1>Create Account</h1>
+
+            <p>Register to start tracking your expenses</p>
+
+            <form id="registerForm">
+
+                <!-- Full Name -->
+                <label for="name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <!-- Email -->
+                <label for="email">Email ID</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- Password -->
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <!-- Confirm Password -->
+                <label for="confirm-password">Confirm Password</label>
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    Register
+                </button>
+
+            </form>
+
+
+            <div class="login-text">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

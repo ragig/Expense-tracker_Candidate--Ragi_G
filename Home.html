@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            height: 70px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #0cec17;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 18px;
+        }
+
+        nav .register {
+            border: 1px solid #65a30d;
+            border-radius: 5px;
+            color: #4d7c0f !important;
+            background-color: #f7fee7;
+        }
+
+        nav .register:hover {
+            border-color: #4d7c0f;
+            background-color: #ecfccb;
+        }
+
+        nav .login {
+            background-color: #84cc16;
+            color: #1a2e05 !important;
+            border-radius: 5px;
+        }
+
+        nav .login:hover,
+        .start-btn:hover {
+            background-color: #65a30d;
+            color: white !important;
+        }
+
+        /* Home Section */
+        .home {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 80px;
+        }
+
+        .content {
+            width: 45%;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .content h1 span {
+            color: #09f715;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .start-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #84cc16;
+            color: #1a2e05;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 17px;
+        }
+
+        /* Image */
+        .image {
+            width: 45%;
+            text-align: center;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .home {
+                flex-direction: column;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .content,
+            .image {
+                width: 100%;
+            }
+
+            .content {
+                margin-bottom: 40px;
+            }
+
+            .content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="home-page">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            Expense Tracker
+        </div>
+
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="register.html" class="register">Register</a>
+            <a href="login.html" class="login">Login</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="home">
+
+        <!-- Left Side -->
+        <div class="content">
+            <h1>
+                Manage Your <span>Expenses</span> Easily
+            </h1>
+
+            <p>
+                Track your daily expenses, manage your budget,
+                and understand where your money goes.
+                Take control of your finances with our simple
+                Expense Tracker.
+            </p>
+
+            <a href="register.html" class="start-btn">
+                Get Started
+            </a>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="image">
+            <img src="photos/homepage.jpg" alt="Expense Tracker">
+        </div>
+
+    </section>
+
+</body>
+</html>
