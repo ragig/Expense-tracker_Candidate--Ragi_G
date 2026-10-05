@@ -42,9 +42,6 @@ Email id:girija@gmail.com
 password:123456R
 Another emailid:ragi@gmail.com,password:123456R
 
-```
 
-## Notes
 
-- User data and expense records are stored in the browser's localStorage.
-- The app is intended for a demo or local personal-use workflow rather than production deployment.
+
